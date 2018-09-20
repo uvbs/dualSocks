@@ -121,7 +121,7 @@ namespace dsocks2
                 var read = 0;
                 while (read != readBuf.Length)
                 {
-                    var len = sock.Receive(buf, readBuf.Length, SocketFlags.None);
+                    var len = sock.Receive(buf, readBuf.Length-read, SocketFlags.None);
                     if (0 == len) break;
                     read += len;
                 }
